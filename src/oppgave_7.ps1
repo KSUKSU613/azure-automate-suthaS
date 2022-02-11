@@ -53,7 +53,7 @@ $kortstokk = $kortstokk[2..$kortstokk.Count]
 $magnus = $kortstokk[0..1]
 $kortstokk = $kortstokk[2..$kortstokk.Count]
 
-Write-Output "Meg: $(kortStokkTilStreng -kortstokk $meg)"
+Write-Output "Sutha: $(kortStokkTilStreng -kortstokk $meg)"
 Write-Output "Magnus: $(kortStokkTilStreng -kortstokk $magnus)"
 Write-Output "Kortstokk: $(kortStokkTilStreng -kortstokk $kortstokk)"
 
@@ -69,7 +69,7 @@ function skrivUtResultat {
     )
     Write-Output "Vinner: $vinner"
     Write-Output "magnus | $(sumPoengKortstokk -kortstokk $kortStokkMagnus) | $(kortstokkTilStreng -kortstokk $kortStokkMagnus)"    
-    Write-Output "meg    | $(sumPoengKortstokk -kortstokk $kortStokkMeg) | $(kortstokkTilStreng -kortstokk $kortStokkMeg)"
+    Write-Output "Sutha    | $(sumPoengKortstokk -kortstokk $kortStokkMeg) | $(kortstokkTilStreng -kortstokk $kortStokkMeg)"
 }
 
 $blackjack = 21
@@ -79,7 +79,7 @@ if (((sumPoengKortstokk -kortstokk $meg) -eq $blackjack) -and ((sumPoengKortstok
     exit
 }
 elseif ((sumPoengKortstokk -kortstokk $meg) -eq $blackjack) {
-    skrivUtResultat -vinner "meg" -kortStokkMagnus $magnus -kortStokkMeg $meg
+    skrivUtResultat -vinner "Sutha" -kortStokkMagnus $magnus -kortStokkMeg $meg
     exit    
 }
 elseif ((sumPoengKortstokk -kortstokk $magnus) -eq $blackjack) {
